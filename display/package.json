@@ -5,6 +5,7 @@
   "description": "Wave Accounting verify-page mapping for BranchlessPay M3+M4",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-strip-types --test tests/*.test.mjs"
+    "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "preview": "node --experimental-strip-types scripts/preview_verify.mjs"
   }
 }

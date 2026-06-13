@@ -16,6 +16,8 @@ const BADGE_CLASS: Record<string, string> = {
   overdue: "badge badge--overdue",
   draft: "badge badge--draft",
   partial: "badge badge--partial",
+  saved: "badge badge--saved",
+  sent: "badge badge--sent",
   unknown: "badge badge--unknown",
 };
 

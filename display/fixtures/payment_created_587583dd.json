@@ -1,0 +1,29 @@
+{
+  "anchor_id": "587583dd-ef70-47c8-8c6f-ed4480e46ba1",
+  "verify_url": "https://branchlesspay.com/verify/587583dd-ef70-47c8-8c6f-ed4480e46ba1",
+  "event_type": "wave_payment_received",
+  "reference_id": "pay-sample-1",
+  "amount": 500.0,
+  "currency": "USD",
+  "voucher_date": "2026-06-12",
+  "timestamp": "2026-06-13T12:00:00Z",
+  "business_name": "BranchlessPay Inc",
+  "business_address": "2810 N Church St STE 88959, Wilmington, DE 19802, USA",
+  "business_id": "QnVzaW5lc3M6MWFkYmRhOWQtZTRlZS00ZGI5LThhNDctZTM5Yjk3ZTU1MDhl",
+  "erp_system": "Wave Accounting",
+  "metadata": {
+    "erp": "wave",
+    "erp_system": "Wave Accounting",
+    "company_name": "BranchlessPay Inc",
+    "business_name": "BranchlessPay Inc",
+    "business_address": "2810 N Church St STE 88959, Wilmington, DE 19802, USA",
+    "business_id": "QnVzaW5lc3M6MWFkYmRhOWQtZTRlZS00ZGI5LThhNDctZTM5Yjk3ZTU1MDhl",
+    "document_type": "Payment",
+    "contact_name": "Microsoft Inc",
+    "status": "PAID",
+    "wave_event": "payment.created",
+    "voucher_date": "2026-06-12",
+    "create_date": "2026-06-12",
+    "payment_date": "2026-06-12"
+  }
+}
