@@ -93,6 +93,15 @@ def normalize_to_bp_payload(
     return payload
 
 
+def _parse_amount(raw: Any) -> float:
+    if raw is None:
+        return 0.0
+    text = str(raw).strip().replace(",", "")
+    if not text:
+        return 0.0
+    return float(text)
+
+
 def _money_value(money: Any) -> tuple[float, str]:
     if isinstance(money, dict):
         raw = money.get("value") or money.get("raw") or money.get("amount") or 0
@@ -102,9 +111,9 @@ def _money_value(money: Any) -> tuple[float, str]:
             if isinstance(currency_obj, dict)
             else money.get("currencyCode")
         ) or "USD"
-        return float(raw), str(code)
+        return _parse_amount(raw), str(code)
     if money is not None:
-        return float(money), "USD"
+        return _parse_amount(money), "USD"
     return 0.0, "USD"
 
 

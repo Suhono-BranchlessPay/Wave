@@ -114,14 +114,19 @@ def _handle_webhook(req: Request, settings) -> tuple[Any, int]:
         _logger.exception("Wave fetch failed: %s", exc)
         return jsonify({"ok": False, "error": "wave fetch failed"}), 502
 
-    bp_payload = normalize_to_bp_payload(
-        event.event_type,
-        document,
-        business_id=event.business_id or settings.wave_business_id,
-        company_name=settings.wave_business_name,
-        business_address=settings.wave_business_address,
-        webhook_timestamp=event.timestamp,
-    )
+    try:
+        bp_payload = normalize_to_bp_payload(
+            event.event_type,
+            document,
+            business_id=event.business_id or settings.wave_business_id,
+            company_name=settings.wave_business_name,
+            business_address=settings.wave_business_address,
+            webhook_timestamp=event.timestamp,
+        )
+    except (TypeError, ValueError) as exc:
+        _logger.exception("Normalize failed: %s", exc)
+        return jsonify({"ok": False, "error": "normalize failed", "detail": str(exc)}), 422
+
     poster = BPPoster(
         license_key=settings.bp_license_key,
         api_url=settings.bp_api_url,
